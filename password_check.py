@@ -1,9 +1,18 @@
 def main():
-    password = input("Input the password")
+    password = get_password()
     if check_length(password):
-        print("*" * len(password))
+        print_asterisk(password)
     else:
         print("password check not passed")
+
+
+def print_asterisk(password):
+    print("*" * len(password))
+
+
+def get_password():
+    password = input("Input the password")
+    return password
 
 
 def check_length(password):

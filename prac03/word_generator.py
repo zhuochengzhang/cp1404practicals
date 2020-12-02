@@ -10,12 +10,28 @@ import random
 VOWELS = "aeiou"
 CONSONANTS = "bcdfghjklmnpqrstvwxyz"
 
-word_format = "ccvcvvc"
-word = ""
-for kind in word_format:
-    if kind == "c":
-        word += random.choice(CONSONANTS)
-    else:
-        word += random.choice(VOWELS)
 
-print(word)
+def main():
+    valid = False
+    while not valid:
+        word_format = input("Input the word format: ")
+        valid = is_valid_format(word_format)
+    word = ""
+    for kind in word_format:
+        if kind == "c":
+            word += random.choice(CONSONANTS)
+        else:
+            word += random.choice(VOWELS)
+
+    print(word)
+
+
+def is_valid_format(word_format):
+    for ch in word_format:
+        if ch != 'c' and ch != 'v':
+            return False
+    return True
+
+
+if __name__ == '__main__':
+    main()

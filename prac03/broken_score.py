@@ -3,12 +3,16 @@ CP1404/CP5632 - Practical
 Broken program to determine score status
 """
 
+from random import randrange
+
 
 # TODO: Fix this!
 
 def main():
     score = float(input("Enter score: "))
     result = score_result(score)
+    print(result)
+    result = score_result(randrange(100))
     print(result)
 
 
